@@ -4,7 +4,9 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
-    "dev": "vite dev"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite build && vite preview"
   },
   "devDependencies": {
     "@mdx-js/mdx": "^2.3.0",
