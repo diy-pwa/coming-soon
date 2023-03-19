@@ -9,7 +9,7 @@
     "preview": "vite build && vite preview"
   },
   "devDependencies": {
-    "@fontsource/recursive": "^4.5.13",
+    "@fontsource/raleway": "^4.5.12",
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@mdx-js/rollup": "^2.3.0",
