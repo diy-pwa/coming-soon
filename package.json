@@ -9,6 +9,7 @@
     "preview": "vite build && vite preview"
   },
   "devDependencies": {
+    "@fontsource/recursive": "^4.5.13",
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@mdx-js/rollup": "^2.3.0",
@@ -19,6 +20,7 @@
     "react-streaming": "^0.3.5",
     "vite": "^4.2.0",
     "vite-plugin-ssr": "^0.4.98",
-    "vitest": "^0.29.3"
+    "vitest": "^0.29.3",
+    "w3-css": "^4.1.0"
   }
 }
