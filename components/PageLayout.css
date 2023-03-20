@@ -1,11 +1,11 @@
 /* your global css here */
 
 body,
-h1 {
+h1{
   font-family: 'Raleway', sans-serif;
 }
 body,
-html {
+html  {
   height: 100%;
 }
 .bgimg {

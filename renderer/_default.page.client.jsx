@@ -7,7 +7,7 @@ import { PageLayout } from '../components/PageLayout';
 async function render(pageContext) {
   const { Page, pageProps } = pageContext;
   hydrateRoot(
-    document.getElementById('page-view'),
+    document.getElementsByTagName('body')[0],
     <PageLayout>
       <Page {...pageProps} />
     </PageLayout>
