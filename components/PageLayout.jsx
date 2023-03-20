@@ -4,5 +4,11 @@ import '@fontsource/raleway';
 import './PageLayout.css';
 
 export function PageLayout({ children }) {
-  return <React.StrictMode>{children}</React.StrictMode>;
+  return (
+    <React.StrictMode>
+      <div className="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        {children}
+      </div>
+    </React.StrictMode>
+  );
 }

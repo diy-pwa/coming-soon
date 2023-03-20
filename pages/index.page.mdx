@@ -3,9 +3,14 @@ export const documentProps = {
   description:
     'A scaffold for a coming soon page with diy-pwa and vite-plugin-ssr',
 };
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import Main from '../components/Main.jsx';
 
-# {documentProps.title}
-
-## This will soon be a very useful site!
-
-Right now it is just [boiler plate](https://github.com/diy-pwa/coming-soon) that you can modify
+<Header />
+<Main>
+  <h1 className="w3-jumbo w3-animate-top">{documentProps.title}</h1>
+  <hr className="w3-border-grey" />
+  <p className="w3-large w3-center">35 days left</p>
+</Main>
+<Footer />
