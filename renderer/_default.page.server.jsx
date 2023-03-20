@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToStream } from 'react-streaming/server';
 import { escapeInject } from 'vite-plugin-ssr';
-import { PageLayout } from '../components/PageLayout';
+import PageLayout from '../components/PageLayout.jsx';
 
 export { render };
 export { passToClient };
