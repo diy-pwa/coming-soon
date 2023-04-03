@@ -21,37 +21,26 @@ const languages = ['en', 'fr'];
 registerRoute(
   async ({ request }) => {
     let isNavigate = false;
-    if(request.mode === 'navigate'){
-        isNavigate = true;
-        const language = await preferences.get('lang');
-        if (language === undefined) {
-            let isLang = false;
-            for(let n = 0; n < languages.length; n++){
-                const re = new RegExp(`/${languages[n]}`);
-                if(request.url.match(re)){
-                    // there is a language in url
-                    preferences.set('lang', languages[n]);
-                    isLang = true;
-                    break;
-                }
-            }
-            if(!isLang){
-                const sAccept = navigator.language;
-                for(let n= 0; n < languages.length; n++){
-                    const re = new RegExp(`^${languages[n]}`);
-                    if(sAccept.match(re)){
-                        // there is a language that is in navigator.language
-                        preferences.set('lang', languages[n]);
-                        isLang = true;
-                    }
-                }
-            }
-            if(!isLang){
-                preferences.set('lang', languages[0]);
-            }
-        }    
+    let oUrl = new URL(request.url);
+    if(oUrl.pathname == '/'){
+      isNavigate = true;
     }
     return isNavigate;
-},
-  i18nHandler(languages, preferences, htmlCachingStrategy),
+  },
+  async () => {
+    const sAccept = navigator.language;
+    let sLang = null;
+    for(let n= 0; n < languages.length; n++){
+        const re = new RegExp(`^${languages[n]}`);
+        if(sAccept.match(re)){
+            // there is a language that is in navigator.language
+            sLang = languages[n];
+            break;
+        }
+    }
+    if(!sLang){
+        sLang =  languages[0];
+    }
+    return Response.redirect(`/${sLang}`, 302);
+}
 );
