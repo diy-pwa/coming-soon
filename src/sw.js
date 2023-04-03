@@ -1,8 +1,8 @@
 import { StaleWhileRevalidate } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
-import { i18nHandler } from 'service-worker-i18n-redirect';
-import { preferences } from 'service-worker-i18n-redirect/preferences';
 import { registerRoute } from 'workbox-routing';
+import getSupportedLanguage from './languages.js'; 
+
 
 // Create a caching strategy
 const htmlCachingStrategy = new StaleWhileRevalidate({
@@ -14,33 +14,19 @@ const htmlCachingStrategy = new StaleWhileRevalidate({
   ],
 });
 
-// Array of supported localizations
-const languages = ['en', 'fr'];
-
 // Use it for navigations
 registerRoute(
   async ({ request }) => {
-    let isNavigate = false;
     let oUrl = new URL(request.url);
-    if(oUrl.pathname == '/'){
-      isNavigate = true;
-    }
-    return isNavigate;
+    return oUrl.pathname === '/';
   },
-  async () => {
-    const sAccept = navigator.language;
-    let sLang = null;
-    for(let n= 0; n < languages.length; n++){
-        const re = new RegExp(`^${languages[n]}`);
-        if(sAccept.match(re)){
-            // there is a language that is in navigator.language
-            sLang = languages[n];
-            break;
-        }
+  async ({event, request, params}) => {
+    const isRoot = await params;
+    if(isRoot){
+      const sLang = getSupportedLanguage();
+      return Response.redirect(`/${sLang}`, 302);
+  
     }
-    if(!sLang){
-        sLang =  languages[0];
-    }
-    return Response.redirect(`/${sLang}`, 302);
+    return htmlCachingStrategy.handle({ event, request });
 }
 );

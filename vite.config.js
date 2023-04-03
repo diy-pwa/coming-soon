@@ -27,9 +27,32 @@ const CompileServiceWorker = () => ({
   }
 })
 
+const CompileMain = () => ({
+  name: 'compile-main',
+  async writeBundle(_options, _outputBundle) {
+    const inputOptions = {
+      input: 'src/main.js',
+      plugins: [
+        replace({
+          'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        nodeResolve()
+      ]
+    }
+    const outputOptions = {
+      file: 'dist/client/main.js',
+      format: 'es',
+    }
+    const bundle = await rollup(inputOptions)
+    await bundle.write(outputOptions)
+    await bundle.close()
+  }
+})
+
 export default {
   plugins: [
     CompileServiceWorker(),
+    CompileMain(),
     react(),
     mdx(),
     ssr({
