@@ -12,6 +12,7 @@ const passToClient = ['pageProps'];
 async function render(pageContext) {
   const { Page, pageProps, userAgent } = pageContext;
   const { documentProps } = pageContext.exports;
+  const sBuild = process.argv[process.argv.length - 1];
   const stream = await renderToStream(
     <PageLayout>
       <Page {...pageProps} />
@@ -32,7 +33,7 @@ async function render(pageContext) {
         <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
         <meta name="theme-color" content="#db4938" />
         <script>
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator && 'build' == '${sBuild}') {
           navigator.serviceWorker.register('/sw.js');
         }
         </script>
