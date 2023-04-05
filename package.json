@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "vitest run",
+    "start": "vite dev",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite build && vite preview",
