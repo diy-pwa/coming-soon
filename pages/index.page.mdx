@@ -1,17 +1,10 @@
 export const documentProps = {
-  title: 'Coming Soon',
+  title: 'Moved permanently',
   description:
-    'A scaffold for a coming soon page with diy-pwa and vite-plugin-ssr',
+    'This is a page that runs to install a service worker',
+  lang: 'en',
+  dir: 'ltr'
 };
-import Header from '../components/Header.mdx';
-import Footer from '../components/Footer.mdx';
-import Main from '../components/Main.jsx';
-import Countdown from '../components/Countdown.jsx';
+import Moved from '../components/Moved.jsx';
 
-<Header />
-<Main>
-  # {documentProps.title}
-  <hr className="w3-border-grey" />
-  <Countdown />
-</Main>
-<Footer />
+<Moved />

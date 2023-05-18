@@ -1,7 +1,7 @@
 import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import Index from '../pages/index.page.mdx';
+import Index from '../pages/en/index.page.mdx';
 import { load } from 'cheerio';
 
 describe('index test', function () {

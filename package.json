@@ -10,7 +10,6 @@
     "preview": "vite build && vite preview",
     "predeploy": "vite build",
     "deploy": "gh-pages -d dist/client"
-
   },
   "devDependencies": {
     "@fontsource/raleway": "^4.5.12",
@@ -27,5 +26,9 @@
     "vite-plugin-ssr": "^0.4.98",
     "vitest": "^0.29.3",
     "w3-css": "^4.1.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-replace": "^5.0.2"
   }
 }
