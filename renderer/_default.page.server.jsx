@@ -26,7 +26,7 @@ async function render(pageContext) {
         <title>${documentProps.title}</title>
         <meta name="description" content="${documentProps.description}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="manifest" href="/site.webmanifest" />
         <!-- ios support -->
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
