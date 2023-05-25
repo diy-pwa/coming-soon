@@ -4,6 +4,7 @@ import ssr from 'vite-plugin-ssr/plugin';
 import {rollup} from 'rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
+import json from '@rollup/plugin-json';
 
 const CompileServiceWorker = () => ({
   name: 'compile-service-worker',
@@ -11,8 +12,10 @@ const CompileServiceWorker = () => ({
     const inputOptions = {
       input: 'src/sw.js',
       plugins: [
+        json(),
         replace({
-          'process.env.NODE_ENV': JSON.stringify('production')
+          'process.env.NODE_ENV': JSON.stringify('production'),
+          preventAssignment: true
         }),
         nodeResolve()
       ]

@@ -1,8 +1,9 @@
 // Array of supported localizations
-const languages = ['en', 'fr'];
+import config from '../package.json' assert {type: 'json'};
 
 export default ()=>{
     const sAccept = navigator.language;
+    const languages = config['io_github_diy-pwa_languages'];
     let sLang = null;
     for(let n= 0; n < languages.length; n++){
         const re = new RegExp(`^${languages[n]}`);
