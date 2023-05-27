@@ -36,7 +36,13 @@
     "@rollup/plugin-replace": "^5.0.2"
   },
   "io_github_diy-pwa_languages": [
-    "en",
-    "fr"
+    {
+      "language": "en",
+      "direction": "ltr"
+    },
+    {
+      "language": "fr",
+      "direction": "ltr"
+    }
   ]
 }
