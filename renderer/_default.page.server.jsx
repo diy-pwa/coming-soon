@@ -13,10 +13,14 @@ async function render(pageContext) {
   const { Page, pageProps, userAgent } = pageContext;
   const { documentProps } = pageContext.exports;
   const sBuild = process.argv[process.argv.length - 1];
+  let streamContents = <div id="io_github_diy-pwa_root" />;
+  if(!documentProps.isSPA){
+    streamContents = <PageLayout>
+    <Page {...pageProps} />
+  </PageLayout>;
+  }
   const stream = await renderToStream(
-    <PageLayout>
-      <Page {...pageProps} />
-    </PageLayout>,
+    streamContents,
     { userAgent }
   );
 
