@@ -6,14 +6,13 @@ export const documentProps = {
   dir: 'ltr'
 };
 import Header from '../../components/Header.mdx';
-import Footer from '../../components/Footer.mdx';
-import Main from '../../components/Main.jsx';
-import Countdown from '../../components/Countdown.jsx';
+import Footer from '../../components/en/Footer.mdx';
+import DaysLeft from '../../components/DaysLeft.jsx';
 
 <Header />
-<Main>
+<section className="w3-display-middle">
   # {documentProps.title}
   <hr className="w3-border-grey" />
-  <Countdown />
-</Main>
+  ## ... in <DaysLeft /> days
+</section>
 <Footer />

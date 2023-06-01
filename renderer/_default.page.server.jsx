@@ -13,7 +13,7 @@ async function render(pageContext) {
   const { Page, pageProps, userAgent } = pageContext;
   const { documentProps } = pageContext.exports;
   const sBuild = process.argv[process.argv.length - 1];
-  let streamContents = <div id="io_github_diy-pwa_root" />;
+  let streamContents = <div id="io_github_diy-pwa_spa_root" />;
   if(!documentProps.isSPA){
     streamContents = <PageLayout>
     <Page {...pageProps} />
@@ -43,7 +43,7 @@ async function render(pageContext) {
         </script>
       </head>
       <body>
-        ${stream}
+        <main id="io_github_diy-pwa_root">${stream}</main>
       </body>
     </html>`;
 }
