@@ -1,7 +1,8 @@
 import { StaleWhileRevalidate } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { registerRoute } from 'workbox-routing';
-import getSupportedLanguage from './languages.js'; 
+import { getSupportedLanguage } from 'diy-pwa'; 
+import config from '../package.json';
 
 
 // Create a caching strategy
@@ -23,7 +24,7 @@ registerRoute(
   async ({event, request, params}) => {
     const isRoot = await params;
     if(isRoot){
-      const sLang = getSupportedLanguage();
+      const sLang = getSupportedLanguage(config);
       return Response.redirect(`/${sLang}`, 302);
   
     }
