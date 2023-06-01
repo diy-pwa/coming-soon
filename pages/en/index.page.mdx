@@ -5,14 +5,16 @@ export const documentProps = {
   lang: 'en',
   dir: 'ltr'
 };
-import Header from '../../components/Header.mdx';
-import Footer from '../../components/en/Footer.mdx';
 import DaysLeft from '../../components/DaysLeft.jsx';
 
-<Header />
+<header className="w3-display-topleft w3-padding-large w3-xlarge">
+  Logo
+</header>
 <section className="w3-display-middle">
   # {documentProps.title}
   <hr className="w3-border-grey" />
   ## ... in <DaysLeft /> days
 </section>
-<Footer />
+<footer className="w3-display-bottomleft w3-padding-large">
+  Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"> w3.css</a>
+</footer>
