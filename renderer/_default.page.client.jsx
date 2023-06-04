@@ -2,7 +2,7 @@ export { render };
 
 import React from 'react';
 import { hydrateRoot, createRoot } from 'react-dom/client';
-import PageLayout from '../components/PageLayout.jsx';
+import PageLayout from '../components/PageLayout.mdx';
 
 async function render(pageContext) {
   const { Page, pageProps } = pageContext;
