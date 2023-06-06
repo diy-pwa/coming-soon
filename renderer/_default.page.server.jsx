@@ -1,8 +1,6 @@
 import React from 'react';
 import { renderToStream } from 'react-streaming/server';
 import { escapeInject } from 'vite-plugin-ssr/server';
-import PageLayout from '../components/PageLayout.mdx';
-
 export { render };
 export { passToClient };
 
@@ -15,9 +13,7 @@ async function render(pageContext) {
   const sBuild = process.argv[process.argv.length - 1];
   let streamContents = <div id="io_github_diy-pwa_spa_root" />;
   if(!documentProps.isSPA){
-    streamContents = <PageLayout>
-    <Page {...pageProps} />
-  </PageLayout>;
+    streamContents = <Page {...pageProps} />
   }
   const stream = await renderToStream(
     streamContents,

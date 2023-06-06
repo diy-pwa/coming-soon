@@ -1,3 +1,7 @@
+import 'w3-css/w3.css';
+import '@fontsource/raleway';
+import '../../components/index.css';
+import {DaysLeft} from 'diy-pwa/components';
 export const documentProps = {
   title: 'Coming Soon',
   description:
@@ -5,14 +9,13 @@ export const documentProps = {
   lang: 'en',
   dir: 'ltr'
 };
-import DaysLeft from '../../components/DaysLeft.jsx';
 // blank line below!
 
 <header className="w3-display-topleft w3-padding-large w3-xlarge">Logo</header>
 <section className="w3-display-middle">
   # {documentProps.title}
   <hr className="w3-border-grey" />
-  ## ... in <DaysLeft /> days
+  ## ... in <DaysLeft readyDate={"2023-06-14"} /> days
 </section>
 <footer className="w3-display-bottomleft w3-padding-large">
   Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"> w3.css</a>
