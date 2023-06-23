@@ -1,5 +1,5 @@
 {
-  "name": "node-starter",
+  "name": "coming-soon",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -7,9 +7,7 @@
     "start": "vite dev",
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite build && vite preview",
-    "predeploy": "vite build",
-    "deploy": "gh-pages -d dist/client"
+    "preview": "vite build && vite preview"
   },
   "devDependencies": {
     "@fontsource/raleway": "^4.5.12",
@@ -17,10 +15,11 @@
     "@mdx-js/react": "^2.3.0",
     "@mdx-js/rollup": "^2.3.0",
     "@rollup/plugin-json": "^6.0.0",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@vitejs/plugin-react": "^4.0.1",
     "cheerio": "*",
     "diy-pwa": "^1.0.56",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-streaming": "^0.3.5",
@@ -31,10 +30,6 @@
     "workbox-cacheable-response": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4"
-  },
-  "dependencies": {
-    "@rollup/plugin-node-resolve": "^15.0.2",
-    "@rollup/plugin-replace": "^5.0.2"
   },
   "io_github_diy-pwa_languages": [
     {
