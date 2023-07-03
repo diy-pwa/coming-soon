@@ -20,17 +20,25 @@
     "@vitejs/plugin-react": "^4.0.1",
     "cheerio": "*",
     "diy-pwa": "^1.0.56",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-streaming": "^0.3.5",
     "rollup": "^3.25.3",
     "vite": "^4.2.0",
+    "vite-plugin-mix": "^0.4.0",
     "vite-plugin-ssr": "^0.4.98",
     "vitest": "^0.29.3",
     "w3-css": "^4.1.0",
     "workbox-cacheable-response": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4"
+  },
+  "overrides": {
+    "vite-plugin-mix": {
+      ".": "^0.4.0",
+      "vite": "^4.2.0"
+    }
   },
   "io_github_diy-pwa_languages": [
     {
