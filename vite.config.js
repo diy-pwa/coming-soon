@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react';
 import mdx from '@mdx-js/rollup';
-import mix from 'vite-plugin-mix';
+import mix from '@rhildred/vite-plugin-mix';
 import ssr from 'vite-plugin-ssr/plugin';
 import { rollup } from 'rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
