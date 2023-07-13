@@ -1,9 +1,11 @@
-import express from 'express';
+import {functionsHandler} from 'cloudflare2express'
 
-const app = express();
-
-app.get('/hello', (req, res) => {
-  res.end('hello');
+const modules = import.meta.glob('../functions/**/*.js', {
+  import: 'onRequest',
+  eager: true,
 });
 
-export const handler = app;
+const appFactory = functionsHandler(modules);
+const handler = appFactory;
+
+export {handler, appFactory};
